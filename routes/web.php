@@ -5,6 +5,7 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\ProyectoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +18,7 @@ use App\Http\Controllers\MainController;
 |
 */
 Route::get("/", [MainController::class, "index"]);
-Route::get("proyectos", [MainController::class, "proyectos"]);
+Route::resource("proyectos", ProyectoController::class);
 
 
 Route::view("principal","principal");

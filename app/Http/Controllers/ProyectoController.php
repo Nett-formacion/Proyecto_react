@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Proyecto;
 use App\Http\Requests\StoreProyectoRequest;
 use App\Http\Requests\UpdateProyectoRequest;
+use Inertia\Inertia;
 
 class ProyectoController extends Controller
 {
@@ -13,6 +14,13 @@ class ProyectoController extends Controller
      */
     public function index()
     {
+        $filas = Proyecto::all();
+        $nombre="Proyectos";
+        $campos=(new Proyecto())->getFillable();
+
+        return (Inertia::render("Tutoria/Proyectos/Listado",
+        compact("filas","nombre","campos")));
+
         //
     }
 

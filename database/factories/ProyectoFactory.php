@@ -17,7 +17,7 @@ class ProyectoFactory extends Factory
     public function definition(): array
     {
         return [
-            "titulo"=>fake()->sentence,
+            "titulo"=>fake()->sentence(),
             "web"=>fake()->url(),
             "horas"=>fake()->randomNumber(2)
             //
